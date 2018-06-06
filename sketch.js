@@ -9,6 +9,7 @@ Simple Image Classification Drag and Drop
 === */
 
 const image = document.getElementById('image'); // The image we want to classify
+const dropContainer = document.getElementById('container');
 const intruction = document.getElementById('instruction');
 
 function preventDefaults(e) {
@@ -17,18 +18,18 @@ function preventDefaults(e) {
 };
 
 ['dragenter', 'dragover'].forEach(eventName => {
-  image.addEventListener(eventName, e => image.classList.add('highlight'), false)
+  dropContainer.addEventListener(eventName, e => image.classList.add('highlight'), false)
 });
 
 ['dragleave', 'drop'].forEach(eventName => {
-  image.addEventListener(eventName, e => image.classList.remove('highlight'), false)
+  dropContainer.addEventListener(eventName, e => image.classList.remove('highlight'), false)
 });
 
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-  image.addEventListener(eventName, preventDefaults, false)
+  dropContainer.addEventListener(eventName, preventDefaults, false)
 });
 
-image.addEventListener('drop', gotImage, false)
+dropContainer.addEventListener('drop', gotImage, false)
 
 function gotImage(e) {
   const dt = e.dataTransfer;
@@ -47,12 +48,10 @@ function gotImage(e) {
       setTimeout(classifyImage, 100);
     }
   } else {
-    image.src = 'images/kitten.jpg';
+    image.src = 'images/bird.jpg';
     intruction.innerHTML = 'Drag and drop a new image above. Please drop an image file.'
   }
 }
-
-image.addEventListener('drop', gotImage, false);
 
 const result = document.getElementById('result'); // The result tag in the HTML
 const probability = document.getElementById('probability'); // The probability tag in the HTML
