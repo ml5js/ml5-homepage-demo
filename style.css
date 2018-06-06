@@ -5,7 +5,7 @@ html, body {
 
 #image {
   max-height: 300px;
-  max-width: 480px;
+  max-width: 90%;
 }
 
 #container {

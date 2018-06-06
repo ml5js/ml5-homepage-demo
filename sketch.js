@@ -17,6 +17,14 @@ function preventDefaults(e) {
   e.stopPropagation()
 };
 
+function windowResized() {
+  if (window.innerWidth < 480) {
+    image.style.maxWidth = window.innerWidth - 80;
+  } else {
+    image.style.maxWidth = '90%';
+  }
+}
+
 ['dragenter', 'dragover'].forEach(eventName => {
   dropContainer.addEventListener(eventName, e => image.classList.add('highlight'), false)
 });
