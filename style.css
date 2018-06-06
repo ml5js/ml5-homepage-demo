@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#image {
+  max-height: 300px;
+  min-height: 300px;
+  max-width: 600px;
+}
+
+#container {
+  max-height: 400px;
+}
+
+#text-container {
+  height: 100px;
+  width: 100%;
+}
+
+.highlight {
+  opacity: 0.4;
+}
