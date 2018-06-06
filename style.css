@@ -5,19 +5,20 @@ html, body {
 
 #image {
   max-height: 300px;
-  min-height: 300px;
-  max-width: 600px;
+  max-width: 480px;
 }
 
 #container {
   background: white;
-  height: 500px;
+  height: 420px;
   border: dashed rgba(161,89,252, 0.5) 1px;
+  padding: 40px;
 }
 
 #text-container {
   height: 100px;
   width: 100%;
+  text-align: center;
 }
 
 #instruction {
@@ -30,4 +31,10 @@ html, body {
 
 .highlight {
   opacity: 0.4;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
