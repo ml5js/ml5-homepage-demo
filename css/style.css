@@ -1,6 +1,26 @@
+@font-face {
+  font-family: 'Apercu';
+  font-style: normal;
+  src:
+    local('Apercu'),
+    local('Apercu Pro Regular'),
+    url('/css/ApercuRegular.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Apercu Bold';
+  font-style: bold;
+  src:
+    local('Apercu Pro Regular'),
+    url('/css/ApercuBold.ttf') format('truetype');
+
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  font-family: Apercu;
 }
 
 #image {
@@ -45,7 +65,7 @@ html, body {
 
 #uplooader-link {
   cursor: pointer;
-  font-weight: bold;
+  font-family: Apercu Bold;
 }
 
 a:hover { 

@@ -11,7 +11,6 @@ Simple Image Classification Drag and Drop
 const image = document.getElementById('image'); // The image we want to classify
 const dropContainer = document.getElementById('container');
 const warning = document.getElementById('warning');
-let windowW = window.innerWidtt;
 const fileInput = document.getElementById('fileUploader');
 
 function preventDefaults(e) {
@@ -20,10 +19,15 @@ function preventDefaults(e) {
 };
 
 function windowResized() {
-  if (windowW < 480) {
+  let windowW = window.innerWidth;
+  if (windowW < 480 && windowW >= 200) {
     image.style.maxWidth = windowW - 80;
+    dropContainer.style.display = 'block';
+  } else if (windowW < 200) {
+    dropContainer.style.display = 'none';
   } else {
     image.style.maxWidth = '90%';
+    dropContainer.style.display = 'block';
   }
 }
 
