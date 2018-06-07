@@ -33,6 +33,7 @@ html, body {
   height: 420px;
   border: dashed rgba(161,89,252, 0.5) 1px;
   padding: 40px;
+  font-size: 14px;
 }
 
 #text-container {
@@ -43,15 +44,19 @@ html, body {
 
 #instruction {
   margin-top: 0;
-  color: #0bcf82;
 }
 
 .result-color {
   color: #A159FC;
 }
 
+.green-color {
+  color: #0bcf82;
+}
+
 .highlight {
   opacity: 0.4;
+  background-color: rgba(161,89,252, 0.2) !important;
 }
 
 .center {

@@ -32,11 +32,11 @@ function windowResized() {
 }
 
 ['dragenter', 'dragover'].forEach(eventName => {
-  dropContainer.addEventListener(eventName, e => image.classList.add('highlight'), false)
+  dropContainer.addEventListener(eventName, e => dropContainer.classList.add('highlight'), false)
 });
 
 ['dragleave', 'drop'].forEach(eventName => {
-  dropContainer.addEventListener(eventName, e => image.classList.remove('highlight'), false)
+  dropContainer.addEventListener(eventName, e => dropContainer.classList.remove('highlight'), false)
 });
 
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -63,17 +63,17 @@ function gotImage(e) {
     }
   } else {
     image.src = 'images/bird.jpg';
+    setTimeout(classifyImage, 100);
     warning.innerHTML = 'Please drop an image file.'
   }
 }
 
 function handleFiles() {
   const curFiles = fileInput.files;
-  console.log('fileInput: ', fileInput);
   if (curFiles.length === 0) {
     image.src = 'images/bird.jpg';
+    setTimeout(classifyImage, 100);
     warning.innerHTML = 'No image selected for upload';
-    console.log('warning.innerHTML: ', warning.innerHTML);
   } else {
     image.src = window.URL.createObjectURL(curFiles[0]);
     warning.innerHTML = '';
@@ -97,7 +97,8 @@ classifyImage();
 
 function classifyImage() {
   classifier.predict(image, results => {
-    result.innerText = results[0].className;
+    let resultTxt = results[0].className.split(',')[0].toLowerCase();
+    result.innerText = resultTxt;
     let prob = 100 * results[0].probability;
     probability.innerText = Number.parseFloat(prob).toFixed(2) + '%';
   });
