@@ -42,6 +42,7 @@ html, body {
 }
 
 #instruction {
+  margin-top: 0;
   color: #0bcf82;
 }
 
@@ -63,11 +64,22 @@ html, body {
   opacity: 0;
 }
 
-#uplooader-link {
-  cursor: pointer;
+#uploader-btn {
+  margin-top: 1em;
+  color: #0bcf82;
+  border: solid 1px #0bcf82;
+  line-height: 2;
+  font-size: 12px;
   font-family: Apercu Bold;
+  cursor: pointer;
 }
 
-a:hover { 
-  text-decoration: underline;
+#uploader-btn:hover {
+  color: white;
+  background-color: #0bcf82;
+  border: solid 1px #0bcf82;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
