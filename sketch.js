@@ -97,7 +97,7 @@ classifyImage();
 
 function classifyImage() {
   classifier.predict(image, results => {
-    let resultTxt = results[0].className.split(',')[0].toLowerCase();
+    let resultTxt = results[0].className;
     result.innerText = resultTxt;
     let prob = 100 * results[0].probability;
     probability.innerText = Number.parseFloat(prob).toFixed(2) + '%';
