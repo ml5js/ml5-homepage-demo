@@ -71,7 +71,8 @@ html, body {
 
 #uploader-btn {
   margin-top: 1em;
-  color: #0bcf82;
+  color: white;
+  background-color: #A159FC;
   border: solid 1px #0bcf82;
   line-height: 2;
   font-size: 12px;
