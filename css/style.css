@@ -4,8 +4,9 @@
   src:
     local('Apercu'),
     local('Apercu Pro Regular'),
-    url('/css/ApercuRegular.ttf') format('truetype');
-
+    url('https://ml5js.github.io/ml5-homepage-demo/css/ApercuRegular.ttf') format('truetype');
+    /* Use the following link if running locally */
+    /* url('/css/ApercuRegular.ttf') format('truetype'); */
 }
 
 @font-face {
@@ -13,8 +14,7 @@
   font-style: bold;
   src:
     local('Apercu Pro Regular'),
-    url('/css/ApercuBold.ttf') format('truetype');
-
+    url('https://ml5js.github.io/ml5-homepage-demo/css/ApercuBold.ttf') format('truetype');
 }
 
 html, body {

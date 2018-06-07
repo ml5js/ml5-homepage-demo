@@ -76,6 +76,7 @@ function handleFiles() {
     console.log('warning.innerHTML: ', warning.innerHTML);
   } else {
     image.src = window.URL.createObjectURL(curFiles[0]);
+    warning.innerHTML = '';
     setTimeout(classifyImage, 100);
   }
 }
