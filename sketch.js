@@ -10,7 +10,9 @@ Simple Image Classification Drag and Drop
 
 const image = document.getElementById('image'); // The image we want to classify
 const dropContainer = document.getElementById('container');
-const intruction = document.getElementById('instruction');
+const warning = document.getElementById('warning');
+let windowW = window.innerWidtt;
+const fileInput = document.getElementById('fileUploader');
 
 function preventDefaults(e) {
   e.preventDefault()
@@ -18,8 +20,8 @@ function preventDefaults(e) {
 };
 
 function windowResized() {
-  if (window.innerWidth < 480) {
-    image.style.maxWidth = window.innerWidth - 80;
+  if (windowW < 480) {
+    image.style.maxWidth = windowW - 80;
   } else {
     image.style.maxWidth = '90%';
   }
@@ -48,7 +50,7 @@ function gotImage(e) {
   const file = files[0];
   const imageType = /image.*/;
   if (file.type.match(imageType)) {
-    intruction.innerHTML = 'Drag and drop a new image above.'
+    warning.innerHTML = '';
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
@@ -57,8 +59,25 @@ function gotImage(e) {
     }
   } else {
     image.src = 'images/bird.jpg';
-    intruction.innerHTML = 'Drag and drop a new image above. Please drop an image file.'
+    warning.innerHTML = 'Please drop an image file.'
   }
+}
+
+function handleFiles() {
+  const curFiles = fileInput.files;
+  console.log('fileInput: ', fileInput);
+  if (curFiles.length === 0) {
+    image.src = 'images/bird.jpg';
+    warning.innerHTML = 'No image selected for upload';
+    console.log('warning.innerHTML: ', warning.innerHTML);
+  } else {
+    image.src = window.URL.createObjectURL(curFiles[0]);
+    setTimeout(classifyImage, 100);
+  }
+}
+
+function clickUploader() {
+  fileInput.click();
 }
 
 const result = document.getElementById('result'); // The result tag in the HTML

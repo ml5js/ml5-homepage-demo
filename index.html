@@ -16,15 +16,18 @@ https://opensource.org/licenses/MIT
   <div id="container">
     <img src="images/bird.jpg" id="image" class="center">
     <div id="text-container">
-      <p id="result-container">
+      <p class="result-color">
         I guess this is a <span id="result">...</span>.
       </p>
       <p id="probability-container">
         My confidence is <span id="probability">...</span>.
       </p>
       <p id="instruction">
-        Drag and drop a new image above.
+        <a id="uplooader-link" onClick="clickUploader()">Choose an image file</a>
+        or drag a new image here.
       </p>
+      <p id="warning" class="result-color"></p>
+      <input name="imgFile" type="file" id="fileUploader" accept="image/*" onChange="handleFiles()">
     </div>
   </div>
   <script src="sketch.js"></script>

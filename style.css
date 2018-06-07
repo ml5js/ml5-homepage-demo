@@ -25,7 +25,7 @@ html, body {
   color: #0bcf82;
 }
 
-#result-container {
+.result-color {
   color: #A159FC;
 }
 
@@ -37,4 +37,17 @@ html, body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#fileUploader {
+  opacity: 0;
+}
+
+#uplooader-link {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+a:hover { 
+  text-decoration: underline;
 }
