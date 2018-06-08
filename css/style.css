@@ -29,11 +29,11 @@ html, body {
 }
 
 #container {
-  background: white;
+  background: #c79ef812;
   height: 420px;
-  border: dashed rgba(161,89,252, 0.5) 1px;
-  padding: 40px;
+  padding: 50px;
   font-size: 14px;
+  border-radius: 33px;
 }
 
 #text-container {
@@ -43,7 +43,7 @@ html, body {
 }
 
 #instruction {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .result-color {
@@ -70,14 +70,16 @@ html, body {
 }
 
 #uploader-btn {
+  background: #faebd700;
   margin-top: 1em;
-  color: white;
-  background-color: #A159FC;
-  border: solid 1px #A159FC;
+  color: #0bcf81;
+  border: solid 1px #0bcf81;
+  padding: .6em 2em;
   line-height: 2;
   font-size: 12px;
-  font-family: Apercu Bold;
+  font-family: Apercu;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 #uploader-btn:hover {
