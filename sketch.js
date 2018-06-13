@@ -89,7 +89,7 @@ const result = document.getElementById('result'); // The result tag in the HTML
 const probability = document.getElementById('probability'); // The probability tag in the HTML
 
 // Initialize the Image Classifier method
-const classifier = new ml5.ImageClassifier();
+const classifier = ml5.imageClassifier('Mobilenet');
 
 // Make a prediction with the selected image
 // This will return an array with a default of 10 options with their probabilities
